@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <cstring>
-#include <cstdlib>
 
 #define NOMBRE_ARCHIVO "conocimiento.csv"
 #define MAX 50
@@ -23,7 +22,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
 	
-	nodo *auxiliar2 = NULL, *actual = NULL, *auxiliar3 = NULL;
+	nodo *auxiliar2 = NULL, *actual = NULL;
 	
 	ifstream file;
 	file.open("conocimiento.csv");
@@ -66,7 +65,7 @@ int main(int argc, char** argv) {
 	nodo *raiz = new nodo();
 	nodo *nodos;
 	nodos = (nodo*)malloc(S*sizeof(nodo));
-
+	
 	//LLENADO DE ARREGLO DE NODOS
 	while(i < S){
 		
@@ -83,18 +82,8 @@ int main(int argc, char** argv) {
 			pos++;
 		}
 		
-		//if(tam == 0){
-			/*	
-			ant = idPadres[pos];
-			auxiliar->a = (nodo*)malloc(sizeof(nodo));
-			
-			auxiliar->a = auxiliar3;
-				cout<<"hola";*/
-
 		ant = idPadres[pos];
 		auxiliar->a = (nodo*)malloc(tam*sizeof(nodo));
-
-
 		nodos[i] = *auxiliar;
 		i++;
 	}
@@ -132,63 +121,13 @@ int main(int argc, char** argv) {
 		veces = i;
 	
 	}
-/*
+	
 	cout<<raiz->sentencia<<endl;
 	auxiliar = &raiz->a[0];
 	cout<<"nivel 1: "<<auxiliar->sentencia<<endl;
 	auxiliar = &raiz->a[0];
 	auxiliar = &auxiliar->a[0];
 	cout<<"nivel 2: "<<auxiliar->sentencia<<endl;
-	*/
-	
-	
-	//Impresión del arbol
-	cout<<raiz->sentencia<<endl;
-	int op;
-	p = 0;
-	i = 1;
-	//cout<<raiz->sentencia<<endl;
-	auxiliar = raiz;
-	//auxiliar = &raiz->a[1];
-	
-	
-	do{
-		
-		//tam = 3;
-		auxiliar->a = (nodo*)malloc(tam*sizeof(nodo));
-		//tam = sizeof(auxiliar->a);
-		//cout<<"tamanio: "<<tam<<endl;
-		
-		for(j=0 ; j<tam ; j++){
-			//auxiliar = &auxiliar->a[i];
-			cout<<(&auxiliar->a[j])->sentencia<<endl;
-		}
-		
-		//p = idPadres[];
-
-		cout<<"\nElija la opcion: "<<endl;
-		op=0;
-		cout<<"\n"<<endl;	
-		auxiliar = &auxiliar->a[op];
-		
-		p++;
-		
-		
-		
-	}while(p<4);
-
-
-/*
-	do{
-		
-		cout<<p+1<<".- "<<auxiliar->sentencia<<endl;
-		p++;
-		auxiliar = &nodos[p];
-		
-	}while(p<S);
-	
-	
-	*/
 	
 	return 0;
 }
